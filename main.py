@@ -6,7 +6,7 @@ if __name__ == '__main__':
     parser.add_argument('--max_fea_ratio', required=True, type=float, help='the maximum ratio of selectable features')
     parser.add_argument('--mode', required=True, type=str, help='train or test')
     parser.add_argument('--further_train_iter', default=0, type=int,
-                        help='the No. of iteration for further train on unseen tasks')
+                        help='the No. of iterations for further train on unseen tasks')
     args = parser.parse_args()
 
     dataset_conf = importlib.import_module('datasets.' + args.dataset_name + '.conf_temp').DATASET_CONF
