@@ -26,7 +26,6 @@ All of the datasets used in our paper, including the other two large-scaled data
 
 Get the usage information of the project
 ```bash
-cd code
 python main.py -h
 ```
 Then the usage information will be shown as following
