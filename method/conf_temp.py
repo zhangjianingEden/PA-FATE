@@ -14,7 +14,7 @@ METHOD_CONF = {
     'mini_batch_size': 64,
     'sample_times': 2,
     'capacity': 1000,
-    'train_iter': 6000,
+    'train_iter': 2000,
     'further_train_iter': 0,
     'test_sample_num': 1,
     'ITS': {
