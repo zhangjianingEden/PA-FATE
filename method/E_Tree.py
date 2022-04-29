@@ -25,11 +25,11 @@ class MyNode:
         else:
             return self
 
-    def update_value_a(self, final_fea_value):
+    def update_value(self, final_fea_value):
         self.visit_times += 1
         self.total_value += final_fea_value
         if self.parent_node is not None:
-            self.parent_node.update_value_a(final_fea_value)
+            self.parent_node.update_value(final_fea_value)
 
     def count_UCB(self):
         UCB = self.total_value / self.visit_times + get_global_dict_value('method_conf')['ITE']['UCB_config']['c'] * (
@@ -63,7 +63,7 @@ class ExperienceTree:
             final_fea_value = epi_info['meta_reward_list']['pretrain_metric_list'][-1]
             leaf_node = self.root_node.gen_child(final_fea_binary)
             # update value
-            leaf_node.update_value_a(final_fea_value)
+            leaf_node.update_value(final_fea_value)
 
     def choose(self):
         init_fea_list = []
