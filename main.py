@@ -2,10 +2,10 @@ from util import *
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset_name', required=True, type=str, help='the name of dataset')
-    parser.add_argument('--max_fea_ratio', required=True, type=float, help='the maximum ratio of selectable features')
-    parser.add_argument('--mode', required=True, type=str, help='train or test')
-    parser.add_argument('--further_train_iter', default=0, type=int,
+    parser.add_argument('dataset_name', type=str, help='the name of dataset')
+    parser.add_argument('max_fea_ratio', type=float, help='the maximum ratio of selectable features')
+    parser.add_argument('mode', type=str, help='train or test')
+    parser.add_argument('--further_train_iter', type=int,
                         help='the No. of iterations for further train on unseen tasks')
     args = parser.parse_args()
 
@@ -14,8 +14,8 @@ if __name__ == '__main__':
     method_conf = importlib.import_module('method.conf_temp').METHOD_CONF
     log_conf = importlib.import_module('log.conf_temp').LOG_CONF
 
-    dataset_conf['dataset_path'] = '/' + os.path.join(*__file__.split('/')[:-1], 'datasets', args.dataset_name)
-
+    dataset_conf['dataset_path'] = '/' + os.path.join(*os.path.abspath(__file__).split('/')[:-1], 'datasets',
+                                                      args.dataset_name)
     global_dict_init()
     set_global_dict_value('dataset_conf', gen_conf(args, dataset_conf))
     set_global_dict_value('env_conf', gen_conf(args, env_conf))
