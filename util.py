@@ -89,7 +89,8 @@ def check_dict_key(mydict, keys):
 def gen_conf(args, conf_temp):
     conf = copy.deepcopy(conf_temp)
     for attr in dir(args):
-        keys = attr.split('__')
-        if check_dict_key(conf, keys):
-            set_dict_value(conf, keys, getattr(args, attr))
+        if getattr(args, attr) is not None:
+            keys = attr.split('__')
+            if check_dict_key(conf, keys):
+                set_dict_value(conf, keys, getattr(args, attr))
     return conf
