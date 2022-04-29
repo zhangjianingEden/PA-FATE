@@ -56,7 +56,7 @@ You could adapt it to your own needs.
 [PA-FATE/method/conf_temp.py](https://github.com/zhangjianingEden/PA-FATE/tree/main/method/conf_temp.py) for method.<br>
 For example, you can control the number of training iteration by modifying this line
 	```
-	[17]  'train_iter': 6000,
+	[17]  'train_iter': 2000,
 	```
 3. Training
 	```
