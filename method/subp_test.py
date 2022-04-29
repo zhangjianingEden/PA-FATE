@@ -43,10 +43,13 @@ def subp_test(process_id,
                         st = env.reset(lb)
                     else:
                         sublog.load_E_Tree_result(lb)
-                        length = len(sublog.E_Tree_result['ITE']['init_fea'])
-                        idx = np.random.randint(low=0, high=length)
-                        init_fea = sublog.E_Tree_result['ITE']['init_fea'][idx]
-                        st = env.reset(lb, init_fea)
+                        if 'ITE' in sublog.E_Tree_result:
+                            length = len(sublog.E_Tree_result['ITE']['init_fea'])
+                            idx = np.random.randint(low=0, high=length)
+                            init_fea = sublog.E_Tree_result['ITE']['init_fea'][idx]
+                            st = env.reset(lb, init_fea)
+                        else:
+                            st = env.reset(lb)
                     env.reward_dict[lb].epi_rwd_reset()
                     obs = env.gen_obs(st)
                     # ----------------------------------------
