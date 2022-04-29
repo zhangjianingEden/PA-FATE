@@ -30,16 +30,17 @@ python main.py -h
 ```
 Then the usage information will be shown as following
 ```
-usage: main.py [-h] env_name method_name mode
+usage: main.py [-h] [--further_train_iter FURTHER_TRAIN_ITER] dataset_name max_fea_ratio mode
 
 positional arguments:
   dataset_name          the name of dataset
   max_fea_ratio         the maximum ratio of selectable features
   mode                  train or test
-  further_train_iter    the No. of iterations for further train on unseen tasks
- 
+
 optional arguments:
-  -h, --help   show this help message and exit
+  -h, --help            show this help message and exit
+  --further_train_iter  FURTHER_TRAIN_ITER
+                        the No. of iterations for further train on unseen tasks
 ```
 Test the trained models provided in [PA-FATE/results](https://github.com/zhangjianingEden/PA-FATE/tree/main/results).
 ```
@@ -74,7 +75,7 @@ For example, you can control the number of training iteration by modifying this 
 	```
 2. Testing with further training
 	```
-	python main.py Emotions 0.5 test 500
+	python main.py Emotions 0.5 test --further_train_iter 500
 	```
 ## :scroll: Acknowledgement
 
