@@ -18,12 +18,12 @@ METHOD_CONF = {
     'further_train_iter': 0,
     'test_sample_num': 1,
     'ITS': {
-        'fq': 10,
+        'fq': 1,
         'uc': 0.5,
         'dis': 0.5,
     },
     'ITE': {
-        'k': 10,
+        'k': 20,
         'UCB_config': {
             'c': 1.0
         },
