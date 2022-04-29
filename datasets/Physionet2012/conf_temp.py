@@ -62,7 +62,7 @@ remap_fea_list = [24, 15, 18, 3, 0, 10, 35, 28, 25, 21, 27, 19, 11, 5, 40, 39, 3
 reremap_fea_list = gen_reremap_fea_list(remap_fea_list)
 
 DATASET_CONF = {
-    'dataset_name': __file__.split('/')[-2],
+    'dataset_name': os.path.abspath(__file__).split('/')[-2],
     'dataset_path': '',
     'metric_type_list': ['auc', 'f1_score'],
     'fea_list': fea_list,
