@@ -82,5 +82,4 @@ For example, you can control the number of training iteration by modifying this 
 Corresponding author: Meihui Zhang, Zhaojing Luo.
 
 ## :e-mail: Contact
-
 If you have any questions, please email `zhangjianingbit@gmail.com`.
