@@ -17,6 +17,11 @@ framework for knowledge generalization and transfer based on MT-DRL, called “F
     ```
     pip install -r requirements.txt
     ```
+## :cd: Datasets
+We provide four medium sized datasets used in our paper in dir
+[PA-FATE/datasets](https://github.com/zhangjianingEden/PA-FATE/tree/main/datasets).
+All of the datasets used in our paper, including the other two large-scaled datasets (i.e., Computers and Mediamill), are available at [Mulan](http://www.uco.es/kdis/mllresources) and [PhysioNet Challenge 2012](https://physionet.org/content/challenge-2012/1.0.0).
+
 ## :zap: Quick Inference
 
 Get the usage information of the project
